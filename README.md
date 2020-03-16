@@ -1,12 +1,9 @@
 <h1 align="center">SBT Filter plugin filters out files not to be published</h1>
 
 <p align="center">
-  <a href='https://travis-ci.org/KarelCemus/sbt-filter'><img src='https://travis-ci.org/KarelCemus/sbt-filter.svg?branch=master'></a>
+  <a href='https://travis-ci.org/mebur/sbt-filter'><img src='https://travis-ci.org/mebur/sbt-filter.svg?branch=master'></a>
 </p>
 
-
-Member of [SbtWeb](https://github.com/sbt/sbt-web) plugin pipeline to filter out assets. The intended use is **to remove** assets
-from the output package, e.g., `*.map`, original `*.less`, unminified files, etc.
 
 This plugin may be used to remove any intermediate or unnecessary assets from the product build of your project.
 Only assets directly owned by the project can be filtered.
@@ -14,7 +11,9 @@ Only assets directly owned by the project can be filtered.
 Add the plugin to the `project/plugins.sbt` of your project:
 
 ```scala
-addSbtPlugin("com.github.karelcemus" % "sbt-filter" % "1.0.0")
+resolvers += Resolver.bintrayIvyRepo("sisyfos-digital", "sbt-plugins")
+
+addSbtPlugin("se.sisyfosdigital.sbt" % "sbt-filter" % "1.0.1")
 ```
 
 Your project's build file also needs to enable sbt-web plugins. For example with build.sbt:
